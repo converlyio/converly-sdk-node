@@ -1,0 +1,74 @@
+{
+  "name": "@converly/sdk-node",
+  "version": "1.0.2",
+  "description": "Server-side conversion tracking for Node backends. Report any conversion your code confirms (SaaS signups, custom form leads, bookings) to Converly, which fires it to Google Ads, Meta, GA4 and more via their server-side APIs (Enhanced Conversions, CAPI) at high match quality.",
+  "license": "MIT",
+  "author": "Converly",
+  "homepage": "https://developers.converly.io/api-trigger",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/converlyio/converly-sdk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/converlyio/converly-sdk-node/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "converly",
+    "conversion-tracking",
+    "server-side-tracking",
+    "lead-tracking",
+    "form-tracking",
+    "saas-signup",
+    "google-ads",
+    "enhanced-conversions",
+    "meta-capi",
+    "conversions-api",
+    "ga4",
+    "attribution",
+    "webhook",
+    "hmac",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^4.0.18"
+  }
+}
